@@ -1,0 +1,16 @@
+body {
+    background-image: url("https://llandscapes-ee1.kxcdn.com/wp-content/uploads/2016/07/rocky-mountain-national-park.jpg");
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    background-color: azure;
+    padding-bottom:50px;
+    padding-left:200px;
+    padding-right:200px;
+    padding-top:50px; 
+    align-content: center;
+    text-align: center;
+
+}
