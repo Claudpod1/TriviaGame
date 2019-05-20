@@ -13,37 +13,60 @@
 <body>
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <div id="game">
-
-                    <h2> Colorado River Trivia</h2>
-                    <p>
-                        You have 15 seconds to answer each question.
-                        <br>
-                        Have fun.
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="col-md-8">
+        <div class="container-fluid">
             <div class="row">
-                <div id="choices" class="text-center">
+
+
+                <h2> Colorado River Trivia</h2>
+                <p>
+                    You have 40 seconds to answer all the questions
+                    <br>
+                    Have fun.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3 id="timer"></h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div id="startGame" class="start-page">
+
                     <button id="start" class="btn btn-info btn-lg"> Begin the Journey</button>
-                    <div id="options">
-                    </div>
                 </div>
             </div>
         </div>
+
+        <div id="game">
+            <div class="row">
+            </div>
+        </div>
+
+        <div class="hidden" id="end-page">
+            <h2>Here are your scores:</h2>
+            <p id="correct-answers"></p>
+            <p id="incorrect-answers"></p>
+            <p id="unanswered"></p>
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <hr>
+                <span class="text-center">
+                    <p>&copy; Claudia Pollinger</p>
+                </span>
+            </div>
+        </footer>
     </div>
 
 
 
-    </div>
-
+    <script src="https://code.jquery.com/jquery.js"> </script>
+    <script type="text/javascript" src="./assets/javaScript/app.js"></script>
 </body>
 
 </html>
