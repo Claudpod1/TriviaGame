@@ -1,9 +1,10 @@
 body {
-    background-image: url("https://newsdeeply.imgix.net/20170907044141/15927847315_01a4796f82_o.jpg?w=640&fit=max&q=60");
-    background-size: 25%;
-    background-repeat: repeat;
+    color:black;
 
-    
+}
+
+.jumbotron {
+    background-image: url("https://newsdeeply.imgix.net/20170907044141/15927847315_01a4796f82_o.jpg?w=640&fit=max&q=60");
 }
 
 .container {
@@ -14,5 +15,6 @@ body {
     padding-top:50px;  */
     align-content: center;
     text-align: center;
+
 
 }

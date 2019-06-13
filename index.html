@@ -5,53 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--BootStrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery.js"> </script>
+    <!--CSS-->
     <link rel="stylesheet" type="text/css" href="./assets/CSS/style.css">
 
     <title> Colorado Rivers Trivia </title>
 </head>
 
 <body>
-
     <div class="container">
-        <div class="container-fluid">
-            <div class="row">
-
-
-                <h2> Colorado River Trivia</h2>
-                <p>
-                    You have 40 seconds to answer all the questions
-                    <br>
-                    Have fun.
-                </p>
+        <div class="jumbotron text-center">
+            <div class="headerWrap">
+                <h1>Colorado RIver Trivia</h1>
+                <p> You have 10 seconds to answer each question</p>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <h3 id="timer"></h3>
-            </div>
+        
+        <div id="contentWrap" class="text-center">
+            <button id="start" class="btn text-center btn-large">Start</button>
         </div>
 
-        <div class="row">
-            <div class="col-md-12">
-                <div id="startGame" class="start-page">
-
-                    <button id="start" class="btn btn-info btn-lg"> Begin the Journey</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="game">
-            <div class="row">
-            </div>
-        </div>
-
-        <div class="hidden" id="end-page">
-            <h2>Here are your scores:</h2>
-            <p id="correct-answers"></p>
-            <p id="incorrect-answers"></p>
-            <p id="unanswered"></p>
-        </div>
+        <div id="resetButtonWrap" class="text-center"></div>
+    </div>
 
         <footer class="footer">
             <div class="container-fluid">
@@ -61,11 +40,9 @@
                 </span>
             </div>
         </footer>
-    </div>
+    
 
 
-
-    <script src="https://code.jquery.com/jquery.js"> </script>
     <script type="text/javascript" src="./assets/javaScript/app.js"></script>
 </body>
 
