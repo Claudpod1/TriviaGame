@@ -22,7 +22,7 @@ var questions = [
     {
         question: "How many named rivers are in colorado?",
         options: [50, 78, 151, 158],
-        answer: 158,
+        answer: "158",
     },
     {
         question: "The longest river in the state of Colorado?",
@@ -39,8 +39,8 @@ var questions = [
 
     {
         question: "How many states does the rivers in Colorado supply water to? ",
-        options: [1, 12, 9, 17],
-        answer: 17,
+        options: [1, 12, 9,17],
+        answer:"17",
     },
 
     {
@@ -75,6 +75,12 @@ $(document).on("click", "#reset", function () {
 
 });
 
+$(document).on("click", ".ansButton", function(event){
+    triviaGame.clicked($(event.target).attr("data-name"));
+    console.log($(event.target).attr("data-name"));
+    
+});
+
 
 var triviaGame = {
     questions: questions,
@@ -102,14 +108,9 @@ var triviaGame = {
         timer = setInterval(triviaGame.countdown, 1000);
         $("#contentWrap").html("<h3><span id = 'timeRemaining'> 10</span> Seconds</h3>");
         $("#contentWrap").append('<h2>' + triviaGame.questions[triviaGame.question].question + '</h2>');
-        console.log("line 106 triviagame question", triviaGame.questions[triviaGame.question].question);
-        console.log(triviaGame.questions[triviaGame.question].options);
+        
         for (var i = 0; i < triviaGame.questions[triviaGame.question].options.length; i++) {
-      
-            
-            
-
-            $('#contentWrap').append('<button class="ansButton" id="button- ' + i + ' "data-name="' + triviaGame.questions[triviaGame.question].options[i] + '">' + triviaGame.questions[triviaGame.question].answer[i] + '</button>');
+            $('#contentWrap').append('<button class="ansButton" id="button- ' + i + ' "data-name="' + triviaGame.questions[triviaGame.question].options[i] + '">' + triviaGame.questions[triviaGame.question].options[i] + '</button>');
         }
     },
 
@@ -127,9 +128,9 @@ var triviaGame = {
        
        
     clearInterval(timer);
-    tiviaGame.incorrect++;
+    triviaGame.incorrect++;
     $("#contentWrap").html('<h2>Maybe next time</h2>');
-    $('#contentWrap').append('<h3>Theanswer is: '+triviaGame.questions[triviaGame.question].correctAnswer+'</h3>');
+    $('#contentWrap').append('<h3>The answer is: '+triviaGame.questions[triviaGame.question].answer+'</h3>');
     if (triviaGame.question==questions.length-1) {
         setTimeout(triviaGame.results,2000);
     }else {
@@ -144,16 +145,16 @@ var triviaGame = {
         triviaGame.correct++;
         $("#contentWrap").html('<h2>BIG BIG MONEY</h2>');
 
-        if (tiviaGame.currentQuestion==questions.length-1) {
+        if (triviaGame.currentQuestion==questions.length-1) {
             setTimeout(triviaGame.results,3000);
         }else {
             setTimeout(triviaGame.nextQuestion,3000);
         }
     },
 
-    clicked: function(u) {
+    clicked: function(sAnswer) {
         clearInterval(timer);
-        if ($(u.target).data("name")===triviaGame.questions[triviaGame.question].answer) {
+        if (sAnswer===triviaGame.questions[triviaGame.question].answer) {
             triviaGame.correctAnswer();            
         }else {
             triviaGame.incorrectAnswer();
@@ -165,10 +166,13 @@ var triviaGame = {
         clearInterval(timer);
         triviaGame.checkAnswers++;
         $("#contentWrap").html("<h3> Out of time!</h3>");
-        $("#contentWrap").append("<h3> The correct question is: triviaGame.questions[triviaGame.question].answer + </h3>");
+        console.log("line 164", triviaGame.questions[triviaGame.question].answer);
+        
+        $("#contentWrap").append(`<h3> The correct question is: ${triviaGame.questions[triviaGame.question].answer} </h3>`);
+        // "<h3> The correct question is:" + triviaGame.questions[triviaGame.question].answer +"</h3>"
 
-
-        if (triviaGame.question === questions.length - 1) {
+        if (triviaGame.question === triviaGame.questions.length - 1) {
+            console.log("hello");
             setTimeout(triviaGame.results, 2000);
 
         } else {
