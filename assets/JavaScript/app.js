@@ -39,8 +39,8 @@ var questions = [
 
     {
         question: "How many states does the rivers in Colorado supply water to? ",
-        options: [1, 12, 9,17],
-        answer:"17",
+        options: [1, 12, 9, 17],
+        answer: "17",
     },
 
     {
@@ -75,10 +75,10 @@ $(document).on("click", "#reset", function () {
 
 });
 
-$(document).on("click", ".ansButton", function(event){
+$(document).on("click", ".ansButton", function (event) {
     triviaGame.clicked($(event.target).attr("data-name"));
     console.log($(event.target).attr("data-name"));
-    
+
 });
 
 
@@ -104,59 +104,60 @@ var triviaGame = {
     // need to display the questions then 
     showQuestion: function () {
         console.log("in show question");
-        
+
         timer = setInterval(triviaGame.countdown, 1000);
         $("#contentWrap").html("<h3><span id = 'timeRemaining'> 10</span> Seconds</h3>");
         $("#contentWrap").append('<h2>' + triviaGame.questions[triviaGame.question].question + '</h2>');
-        
+
         for (var i = 0; i < triviaGame.questions[triviaGame.question].options.length; i++) {
             $('#contentWrap').append('<button class="ansButton" id="button- ' + i + ' "data-name="' + triviaGame.questions[triviaGame.question].options[i] + '">' + triviaGame.questions[triviaGame.question].options[i] + '</button>');
+
         }
     },
 
-    nextQuestion: function() {
-        triviaGame.timeRemaining= 10;
+    nextQuestion: function () {
+        triviaGame.timeRemaining = 10;
         $('#timeRemaining').html(triviaGame.timeRemaining);
         triviaGame.question++;
         triviaGame.showQuestion();
     },
 
-   //if the user gets the incorrect answer function 
-   incorrectAnswer: function() {
-       console.log(triviaGame.questions[triviaGame.question]);
-       console.log(triviaGame.question);
-       
-       
-    clearInterval(timer);
-    triviaGame.incorrect++;
-    $("#contentWrap").html('<h2>Maybe next time</h2>');
-    $('#contentWrap').append('<h3>The answer is: '+triviaGame.questions[triviaGame.question].answer+'</h3>');
-    if (triviaGame.question==questions.length-1) {
-        setTimeout(triviaGame.results,2000);
-    }else {
-        setTimeout(triviaGame.nextQuestion,2000);
-    }
-},
+    //if the user gets the incorrect answer function 
+    incorrectAnswer: function () {
+        console.log(triviaGame.questions[triviaGame.question]);
+        console.log(triviaGame.question);
+
+
+        clearInterval(timer);
+        triviaGame.incorrect++;
+        $("#contentWrap").html('<h2>Maybe next time</h2>');
+        $('#contentWrap').append('<h3>The answer is: ' + triviaGame.questions[triviaGame.question].answer + '</h3>');
+        if (triviaGame.question == questions.length - 1) {
+            setTimeout(triviaGame.results, 2000);
+        } else {
+            setTimeout(triviaGame.nextQuestion, 2000);
+        }
+    },
 
     //if the user gets the correct answer function 
 
-    correctAnswer: function() {
+    correctAnswer: function () {
         clearInterval(timer);
         triviaGame.correct++;
         $("#contentWrap").html('<h2>BIG BIG MONEY</h2>');
 
-        if (triviaGame.currentQuestion==questions.length-1) {
-            setTimeout(triviaGame.results,3000);
-        }else {
-            setTimeout(triviaGame.nextQuestion,3000);
+        if (triviaGame.question == questions.length - 1) {
+            setTimeout(triviaGame.results, 2000);
+        } else {
+            setTimeout(triviaGame.nextQuestion, 2000);
         }
     },
 
-    clicked: function(sAnswer) {
+    clicked: function (sAnswer) {
         clearInterval(timer);
-        if (sAnswer===triviaGame.questions[triviaGame.question].answer) {
-            triviaGame.correctAnswer();            
-        }else {
+        if (sAnswer === triviaGame.questions[triviaGame.question].answer) {
+            triviaGame.correctAnswer();
+        } else {
             triviaGame.incorrectAnswer();
         }
     },
@@ -167,7 +168,7 @@ var triviaGame = {
         triviaGame.checkAnswers++;
         $("#contentWrap").html("<h3> Out of time!</h3>");
         console.log("line 164", triviaGame.questions[triviaGame.question].answer);
-        
+
         $("#contentWrap").append(`<h3> The correct question is: ${triviaGame.questions[triviaGame.question].answer} </h3>`);
         // "<h3> The correct question is:" + triviaGame.questions[triviaGame.question].answer +"</h3>"
 
@@ -180,18 +181,6 @@ var triviaGame = {
 
         }
     },
-
-    ///results 
-    results: function () {
-        clearInterval(timer);
-
-        $('#contentWrap').append("<h3>Correct: " + triviaGame.correct + "</h3>");
-        $('#contentWrap').append("<h3>Incorrect: " + triviaGame.incorrect + "</h3>");
-        $('#contentWrap').append("<h3>Unanswered: " + triviaGame.unanswered + "</h3>");
-        $('#resetButtonWrap').append("<button id=reset> Try Again </button>");
-
-    },
-
     /// need to reset
     reset: function () {
         triviaGame.question = 0;
@@ -202,12 +191,18 @@ var triviaGame = {
         triviaGame.showQuestion();
     },
 
-}
+
+    ///results 
+    results: function () {
 
 
-   // startTimer: function () {
-    //     $("timer").text("Time Remaining:" + triviaGame.timer);
-    //     setInterval(triviaGame.countdown, 1000);
-    //     $("#startGame").hide();
-    //     tGame.displayQuestions();
-    // },
+        clearInterval(timer);
+
+        $('#contentWrap').append("<h3>Correct: " + triviaGame.correct + "</h3>");
+        $('#contentWrap').append("<h3>Incorrect: " + triviaGame.incorrect + "</h3>");
+        $('#contentWrap').append("<h3>Unanswered: " + triviaGame.unanswered + "</h3>");
+        $('#resetButtonWrap').append("<button id=reset> Try Again </button>");
+
+    },
+
+};
