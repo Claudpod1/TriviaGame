@@ -2,7 +2,7 @@
 //sorted by | question.options.answer 
 
 
-
+3
 // you need your questions with options and an answer 
 // click event to start the game 
 // start a timer when you hit the start button 
