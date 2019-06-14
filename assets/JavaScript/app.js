@@ -182,16 +182,7 @@ var triviaGame = {
         }
     },
     /// need to reset
-    reset: function () {
-        triviaGame.question = 0;
-        triviaGame.timeRemaining = 10;
-        triviaGame.correct = 0;
-        triviaGame.incorrect = 0;
-        triviaGame.unanswered = 0;
-        triviaGame.showQuestion();
-    },
-
-
+  
     ///results 
     results: function () {
 
@@ -201,8 +192,18 @@ var triviaGame = {
         $('#contentWrap').append("<h3>Correct: " + triviaGame.correct + "</h3>");
         $('#contentWrap').append("<h3>Incorrect: " + triviaGame.incorrect + "</h3>");
         $('#contentWrap').append("<h3>Unanswered: " + triviaGame.unanswered + "</h3>");
-        $('#resetButtonWrap').append("<button id=reset> Try Again </button>");
+        $('#resetButton').append("<button id=reset> Try Again </button>");
 
+    },
+
+    reset: function () {
+        $('#resetButton').hide();
+        triviaGame.question = 0;
+        triviaGame.timeRemaining = 10;
+        triviaGame.correct = 0;
+        triviaGame.incorrect = 0;
+        triviaGame.unanswered = 0;
+        triviaGame.showQuestion();
     },
 
 };
