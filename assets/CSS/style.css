@@ -1,60 +1,60 @@
-* {
+ * {
     box-sizing: border-box;
 }
 
 body {
     color:#BC4749;
     background-color: #1D3354;
-}
-
-.h1, h1 {
-    font-size: 2.5rem;
-    margin-bottom: .5rem;
-    font-weight: 500;
-    line-height: 1.2;
-    margin-top: 0;
-    display: block;
-}
-
-.lead {
-    font-size: 1.25rem;
-    font-weight: 300;
-}
-
-p {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    height: 100%;
+    margin: 0;
+    font-family: 'Dosis', sans-serif;
+    text-align: center
 }
 
 .btn {
     background-color: #f9db6d;
     color: #1d3354;
-
-}
-.container {
-    background-color: azure;
-    /* padding-bottom:50px;
-    padding-left:200px;
-    padding-right:200px;
-    padding-top:50px;  */
-    align-content: center;
-    text-align: center;
-
-
-}
- footer {
-     display: block;
- }
-.mt-auto{
-    margin-top:auto!important;
-}
-
-#button {
+    margin:40px; 
     padding: 10px;
-    margin:10px; 
+    font-size: 20px
 }
+
+header {
+    background-color: #f4eded;
+    padding: 30px;
+    font-size: 35px;
+    color: #467599;
+  }
+
+  section:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .wrapper {
+      min-height: 100%;
+      margin-bottom: -50px
+  }
+  
+  footer {
+    background-color: #467599;
+    padding: 10px;
+    text-align: center;
+    color: #f9db6d;
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  
+  @media (max-width: 600px) {
+    nav, article {
+      width: 100%;
+      height: auto;
+    }
+  }
