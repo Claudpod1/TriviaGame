@@ -24,3 +24,7 @@
 * MAKE it stylish and creative. 
 
 <b> Techologies used </b>
+* JavaScript 
+* JQuery
+* HTML 
+* CSS
