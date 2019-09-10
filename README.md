@@ -4,6 +4,7 @@
 
 <b> The 5th homework assignment creating a Trivia game using JavaScript for the logic and JQuery to manipulate the HTML. </b>
 
+<img width="1083" alt="Screen Shot 2019-09-09 at 7 28 43 PM" src="https://user-images.githubusercontent.com/48806630/64576992-36a62c00-d338-11e9-9251-5f3c0d064f96.png">
 
 
 <b> About </b>
